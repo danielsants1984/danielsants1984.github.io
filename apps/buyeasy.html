@@ -5,6 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BuyEasy - Daniel Santos</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #1976d2;
+      color: #fff;
+      padding: 1.2rem 0;
+      text-align: center;
+      box-shadow: 0 2px 6px #0001;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: text-decoration 0.2s;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px #0002;
+    }
+    .app-card {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .app-card img {
+      width: 96px;
+      height: 96px;
+      border-radius: 18px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 8px #0002;
+    }
+    .download-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #43a047;
+      color: #fff;
+      padding: 0.9em 2em;
+      border-radius: 22px;
+      font-size: 1.1em;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 2px 6px #0001;
+      transition: background 0.2s;
+    }
+    .download-btn:hover {
+      background: #357a38;
+    }
+    .features ul {
+      padding-left: 1.2em;
+      margin: 1em 0;
+      list-style: disc inside;
+    }
+    .features li {
+      margin-bottom: 0.6em;
+    }
+    footer {
+      margin-top: 2.5rem;
+      text-align: center;
+      color: #888;
+      font-size: 0.98em;
+      padding: 1.2em 0 0.7em 0;
+    }
+    @media (max-width: 700px) {
+      main {
+        margin: 1rem;
+        padding: 1rem 0.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -17,10 +98,11 @@
   <main>
     <section class="intro">
       <div class="app-card">
-              <img src="apps/BuyEasy/icone.png" alt="Ícone BuyEasy">
-      <h2>O jeito mais rápido de criar listas de compras!</h2>
-      <p>Chega de esquecer itens no mercado ou depender de papel. O BuyEasy resolve seu problema em segundos.</p>
-      <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.danielsantos.buyeasy" target="_blank">Baixar na Play Store</a>
+        <img src="../apps/BuyEasy/icone.png" alt="Ícone BuyEasy">
+        <h2>O jeito mais rápido de criar listas de compras!</h2>
+        <p>Chega de esquecer itens no mercado ou depender de papel. O BuyEasy resolve seu problema em segundos.</p>
+        <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.danielsantos.buyeasy" target="_blank" rel="noopener">Baixar na Play Store</a>
+      </div>
     </section>
 
     <section class="features">
