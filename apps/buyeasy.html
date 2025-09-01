@@ -4,154 +4,416 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BuyEasy - Daniel Santos</title>
+  <meta name="description" content="BuyEasy - O jeito mais rápido de criar listas de compras. App desenvolvido por Daniel Santos">
+  <meta name="keywords" content="BuyEasy, lista de compras, app, Daniel Santos, Android">
   <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- CSS do Bootstrap para o carrossel -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f5f7fa;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       margin: 0;
       padding: 0;
+      min-height: 100vh;
     }
+    
     header {
-      background: #007b5e;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
       color: #fff;
-      padding: 1.2rem 0;
+      padding: 2rem 0;
       text-align: center;
-      box-shadow: 0 2px 6px #0001;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: hidden;
     }
-    nav a {
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+    }
+    
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+    
+    header nav {
+      position: relative;
+      z-index: 1;
+    }
+    
+    header nav a {
       color: #fff;
       margin: 0 12px;
       text-decoration: none;
-      font-weight: bold;
-      transition: text-decoration 0.2s;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      display: inline-block;
     }
-    nav a:hover {
-      text-decoration: underline;
+    
+    header nav a:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
+    
     main {
-      max-width: 600px;
-      margin: 2rem auto;
-      background: #fff;
-      padding: 2rem 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px #0002;
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 2rem;
     }
+    
+    .intro {
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      margin-bottom: 3rem;
+    }
+    
     .app-card {
       text-align: center;
       margin-bottom: 2rem;
     }
+    
     .app-card img {
-      width: 96px;
-      height: 96px;
-      border-radius: 18px;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 8px #0002;
+      width: 120px;
+      height: 120px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
     }
+    
+    .app-card:hover img {
+      transform: scale(1.1) rotate(5deg);
+    }
+    
+    .app-card h2 {
+      font-size: 2.5rem;
+      color: #1e3c72;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    .app-card p {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
     .download-btn {
       display: inline-block;
-      margin-top: 1rem;
-      background: #43a047;
+      background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
       color: #fff;
-      padding: 0.9em 2em;
-      border-radius: 22px;
-      font-size: 1.1em;
+      padding: 15px 35px;
+      border-radius: 25px;
+      font-size: 1.2em;
       font-weight: 600;
       text-decoration: none;
-      box-shadow: 0 2px 6px #0001;
-      transition: background 0.2s;
+      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
+    
+    .download-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .download-btn:hover::before {
+      left: 100%;
+    }
+    
     .download-btn:hover {
-      background: #357a38;
+      background: linear-gradient(135deg, #218838 0%, #1ea085 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(40, 167, 69, 0.6);
+      color: white;
     }
+    
+    .features {
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      margin-bottom: 3rem;
+    }
+    
+    .features h2 {
+      font-size: 2.5rem;
+      color: #1e3c72;
+      margin-bottom: 2rem;
+      text-align: center;
+      position: relative;
+    }
+    
+    .features h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border-radius: 2px;
+    }
+    
     .features ul {
       padding-left: 1.2em;
       margin: 1em 0;
-      list-style: disc inside;
+      list-style: none;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
+    
     .features li {
-      margin-bottom: 0.6em;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 15px;
+      border: 1px solid rgba(102, 126, 234, 0.1);
+      position: relative;
+      padding-left: 3rem;
     }
-    footer {
-      margin-top: 2.5rem;
+    
+    .features li::before {
+      content: '✓';
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+    
+    .screenshots {
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .screenshots h2 {
+      font-size: 2.5rem;
+      color: #1e3c72;
+      margin-bottom: 2rem;
       text-align: center;
-      color: #888;
-      font-size: 0.98em;
-      padding: 1.2em 0 0.7em 0;
+      position: relative;
     }
+    
+    .screenshots h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border-radius: 2px;
+    }
+    
+    .carousel-container {
+      max-width: 400px;
+      margin: 2rem auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .carousel-item img {
+      border-radius: 15px;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+      background: rgba(102, 126, 234, 0.8);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin: auto 10px;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: 20px;
+      height: 20px;
+    }
+    
+    footer {
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+    }
+    
+    footer p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    
     @media (max-width: 700px) {
       main {
-        margin: 1rem;
-        padding: 1rem 0.5rem;
+        margin: 2rem 1rem;
+        padding: 0 1rem;
+      }
+      
+      .intro,
+      .features,
+      .screenshots {
+        padding: 2rem 1.5rem;
+      }
+      
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      .app-card h2,
+      .features h2,
+      .screenshots h2 {
+        font-size: 2rem;
+      }
+      
+      .carousel-container {
+        max-width: 100%;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      .app-card h2,
+      .features h2,
+      .screenshots h2 {
+        font-size: 1.8rem;
+      }
+      
+      .intro,
+      .features,
+      .screenshots {
+        padding: 1.5rem 1rem;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>BuyEasy</h1>
+    <h1><i class="fas fa-shopping-cart"></i> BuyEasy</h1>
     <nav>
-      <a href="../index.html">Início</a>
+      <a href="../index.html"><i class="fas fa-home"></i> Voltar ao Início</a>
     </nav>
   </header>
 
   <main>
     <section class="intro">
       <div class="app-card">
-        <img src="../apps/BuyEasy/icone.png" alt="Ícone BuyEasy">
+        <img src="BuyEasy/icone.png" alt="Ícone BuyEasy">
         <h2>O jeito mais rápido de criar listas de compras!</h2>
-        <p>Chega de esquecer itens no mercado ou depender de papel. O BuyEasy resolve seu problema em segundos.</p>
-        <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.danielsantos.buyeasy" target="_blank" rel="noopener">Baixar na Play Store</a>
+        <p>Chega de esquecer itens no mercado ou depender de papel. O BuyEasy resolve seu problema em segundos, com uma interface intuitiva e funcionalidades poderosas.</p>
+        <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.danielsantos.buyeasy" target="_blank" rel="noopener">
+          <i class="fab fa-google-play"></i> Baixar na Play Store
+        </a>
       </div>
     </section>
 
     <section class="features">
-      <h2>Funcionalidades</h2>
+      <h2><i class="fas fa-star"></i> Funcionalidades Principais</h2>
       <ul>
-        <li>Adição rápida com sugestões automáticas</li>
-        <li>Marcação de itens comprados</li>
-        <li>Histórico de itens para reuso</li>
+        <li>Adição rápida com sugestões automáticas inteligentes</li>
+        <li>Marcação visual de itens comprados</li>
+        <li>Histórico completo de itens para reuso</li>
         <li>Compartilhamento via WhatsApp ou e-mail</li>
-        <li>Funciona totalmente offline</li>
-        <li>Suporte a inglês e português</li>
-        <li>Interface simples e otimizada para qualquer Android</li>
+        <li>Funcionamento totalmente offline</li>
+        <li>Suporte completo a inglês e português</li>
+        <li>Interface otimizada para qualquer dispositivo Android</li>
+        <li>Sincronização automática entre dispositivos</li>
       </ul>
     </section>
 
-    <!-- Carrossel Bootstrap com os prints da pasta BuyEasy -->
-    <section>
-      <h2 style="text-align:center;margin-top:2rem;">Capturas de Tela</h2>
-      <div id="carouselBuyEasy" class="carousel slide" data-bs-ride="carousel" style="max-width:400px;margin:2rem auto;">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="BuyEasy/IMG-20250811-WA0003.jpg" class="d-block w-100" alt="Print 1">
+    <section class="screenshots">
+      <h2><i class="fas fa-mobile-alt"></i> Capturas de Tela</h2>
+      <div class="carousel-container">
+        <div id="carouselBuyEasy" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="BuyEasy/IMG-20250811-WA0003.jpg" class="d-block w-100" alt="Interface principal do BuyEasy">
+            </div>
+            <div class="carousel-item">
+              <img src="BuyEasy/IMG-20250811-WA0004.jpg" class="d-block w-100" alt="Criando lista de compras">
+            </div>
+            <div class="carousel-item">
+              <img src="BuyEasy/IMG-20250811-WA0005.jpg" class="d-block w-100" alt="Gerenciando itens">
+            </div>
+            <div class="carousel-item">
+              <img src="BuyEasy/IMG-20250811-WA0006.jpg" class="d-block w-100" alt="Histórico de compras">
+            </div>
+            <div class="carousel-item">
+              <img src="BuyEasy/IMG-20250811-WA0007.jpg" class="d-block w-100" alt="Configurações do app">
+            </div>
+            <div class="carousel-item">
+              <img src="BuyEasy/IMG-20250811-WA0008.jpg" class="d-block w-100" alt="Menu principal">
+            </div>
           </div>
-          <div class="carousel-item">
-            <img src="BuyEasy/IMG-20250811-WA0004.jpg" class="d-block w-100" alt="Print 2">
-          </div>
-          <div class="carousel-item">
-            <img src="BuyEasy/IMG-20250811-WA0005.jpg" class="d-block w-100" alt="Print 3">
-          </div>
-          <div class="carousel-item">
-            <img src="BuyEasy/IMG-20250811-WA0006.jpg" class="d-block w-100" alt="Print 4">
-          </div>
-          <div class="carousel-item">
-            <img src="BuyEasy/IMG-20250811-WA0007.jpg" class="d-block w-100" alt="Print 5">
-          </div>
-          <div class="carousel-item">
-            <img src="BuyEasy/IMG-20250811-WA0008.jpg" class="d-block w-100" alt="Print 6">
-          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselBuyEasy" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselBuyEasy" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Próximo</span>
+          </button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselBuyEasy" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-          <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselBuyEasy" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-          <span class="visually-hidden">Próximo</span>
-        </button>
       </div>
     </section>
   </main>
@@ -159,6 +421,7 @@
   <footer>
     <p>&copy; 2025 Daniel Santos. Todos os direitos reservados.</p>
   </footer>
+  
   <!-- JS do Bootstrap para o carrossel -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -4,44 +4,239 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daniel Santos - Desenvolvedor de Aplicativos</title>
+  <meta name="description" content="Portfólio de Daniel Santos - Desenvolvedor de aplicativos móveis e soluções digitais">
+  <meta name="keywords" content="desenvolvedor, aplicativos, mobile, Daniel Santos, BuyEasy">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>Daniel Santos</h1>
-    <p>Desenvolvedor de Aplicativos</p>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="#apps">Aplicativos</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
-    </nav>
+    <div class="container">
+      <h1><i class="fas fa-code"></i> Daniel Santos</h1>
+      <p>Desenvolvedor de Aplicativos & Soluções Digitais</p>
+      <nav>
+        <a href="#inicio"><i class="fas fa-home"></i> Início</a>
+        <a href="#apps"><i class="fas fa-mobile-alt"></i> Aplicativos</a>
+        <a href="#sobre"><i class="fas fa-user"></i> Sobre</a>
+        <a href="#skills"><i class="fas fa-tools"></i> Habilidades</a>
+        <a href="#contato"><i class="fas fa-envelope"></i> Contato</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section id="apps">
-      <h2>Aplicativos</h2>
-      <div class="app-card">
-        <img src="apps/BuyEasy/icone.png" alt="Ícone BuyEasy">
-        <h3>BuyEasy</h3>
-        <p>Crie suas listas de compras de forma ultrarápida, com facilidade e praticidade.</p>
-        <a href="apps/buyeasy.html" class="btn">Saiba Mais</a>
+    <!-- Seção Hero -->
+    <section id="inicio" class="hero-section">
+      <div class="hero-content">
+        <h2>Transformando Ideias em Aplicativos Incríveis</h2>
+        <p>Desenvolvo soluções móveis que facilitam a vida das pessoas, com foco em usabilidade e design intuitivo.</p>
+        <div class="hero-buttons">
+          <a href="#apps" class="btn btn-primary"><i class="fas fa-rocket"></i> Ver Projetos</a>
+          <a href="#contato" class="btn btn-secondary"><i class="fas fa-paper-plane"></i> Fale Comigo</a>
+        </div>
       </div>
     </section>
 
-    <section id="sobre">
-      <h2>Sobre Mim</h2>
-      <p>Sou Daniel Santos, desenvolvedor de aplicativos focado em criar soluções práticas e intuitivas.</p>
+    <!-- Seção Aplicativos -->
+    <section id="apps">
+      <h2><i class="fas fa-mobile-alt"></i> Meus Aplicativos</h2>
+      <div class="apps-grid">
+        <div class="app-card featured">
+          <div class="app-badge">Destaque</div>
+          <img src="apps/BuyEasy/icone.png" alt="Ícone BuyEasy">
+          <h3>BuyEasy</h3>
+          <p class="app-description">Crie suas listas de compras de forma ultrarápida, com facilidade e praticidade. O app mais eficiente para gerenciar suas compras do dia a dia.</p>
+          <div class="app-features">
+            <span class="feature-tag"><i class="fas fa-bolt"></i> Rápido</span>
+            <span class="feature-tag"><i class="fas fa-wifi"></i> Offline</span>
+            <span class="feature-tag"><i class="fas fa-globe"></i> Multilíngue</span>
+          </div>
+          <div class="app-actions">
+            <a href="apps/buyeasy.html" class="btn btn-primary"><i class="fas fa-info-circle"></i> Saiba Mais</a>
+            <a href="https://play.google.com/store/apps/details?id=com.danielsantos.buyeasy" target="_blank" class="btn btn-download"><i class="fab fa-google-play"></i> Play Store</a>
+          </div>
+        </div>
+        
+        <div class="app-card coming-soon">
+          <div class="app-badge">Em Breve</div>
+          <div class="placeholder-icon">
+            <i class="fas fa-plus"></i>
+          </div>
+          <h3>Novo Projeto</h3>
+          <p class="app-description">Estou trabalhando em um novo aplicativo incrível. Em breve você poderá conhecer mais sobre ele!</p>
+          <div class="app-actions">
+            <span class="btn btn-disabled"><i class="fas fa-clock"></i> Em Desenvolvimento</span>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- Seção Sobre -->
+    <section id="sobre">
+      <h2><i class="fas fa-user"></i> Sobre Mim</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Sou Daniel Santos, um desenvolvedor apaixonado por criar soluções digitais que realmente fazem a diferença na vida das pessoas.</p>
+          <p>Com foco em aplicativos móveis, busco sempre a excelência em usabilidade, design e performance. Cada projeto é uma oportunidade de aprender e evoluir.</p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <i class="fas fa-mobile-alt"></i>
+              <span class="stat-number">5+</span>
+              <span class="stat-label">Apps Desenvolvidos</span>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-users"></i>
+              <span class="stat-number">1000+</span>
+              <span class="stat-label">Usuários Ativos</span>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-star"></i>
+              <span class="stat-number">4.5</span>
+              <span class="stat-label">Avaliação Média</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Habilidades -->
+    <section id="skills">
+      <h2><i class="fas fa-tools"></i> Minhas Habilidades</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3><i class="fas fa-mobile-alt"></i> Desenvolvimento Mobile</h3>
+          <div class="skill-items">
+            <span class="skill-item">Android Native</span>
+            <span class="skill-item">Kotlin</span>
+            <span class="skill-item">Java</span>
+            <span class="skill-item">React Native</span>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <h3><i class="fas fa-code"></i> Linguagens & Frameworks</h3>
+          <div class="skill-items">
+            <span class="skill-item">JavaScript</span>
+            <span class="skill-item">Python</span>
+            <span class="skill-item">HTML/CSS</span>
+            <span class="skill-item">SQL</span>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <h3><i class="fas fa-palette"></i> Design & UX</h3>
+          <div class="skill-items">
+            <span class="skill-item">Material Design</span>
+            <span class="skill-item">UI/UX</span>
+            <span class="skill-item">Figma</span>
+            <span class="skill-item">Responsivo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Contato -->
     <section id="contato">
-      <h2>Contato</h2>
-      <p>Email: danielj.santos13@gmail.com</p>
+      <h2><i class="fas fa-envelope"></i> Entre em Contato</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:danielj.santos13@gmail.com">danielj.santos13@gmail.com</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <div>
+              <h4>GitHub</h4>
+              <a href="https://github.com/danielsants1984" target="_blank">@danielsants1984</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <div>
+              <h4>LinkedIn</h4>
+              <a href="#" target="_blank">Daniel Santos</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-message">
+          <p>Interessado em trabalhar juntos ou tem alguma dúvida? Não hesite em entrar em contato!</p>
+          <a href="mailto:danielj.santos13@gmail.com" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar Mensagem</a>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Daniel Santos. Todos os direitos reservados.</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Daniel Santos</h4>
+        <p>Transformando ideias em realidade digital</p>
+      </div>
+      <div class="footer-section">
+        <h4>Links Rápidos</h4>
+        <a href="#apps">Aplicativos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="footer-section">
+        <h4>Redes Sociais</h4>
+        <div class="social-links">
+          <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Daniel Santos. Todos os direitos reservados.</p>
+    </div>
   </footer>
+
+  <script>
+    // Smooth scrolling para links internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Animação de entrada para elementos
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observar todas as seções
+    document.querySelectorAll('section').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(30px)';
+      section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>

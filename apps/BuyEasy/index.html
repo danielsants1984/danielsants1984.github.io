@@ -4,23 +4,247 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BuyEasy - Daniel Santos</title>
+  <meta name="description" content="BuyEasy - O jeito mais rápido de criar listas de compras. App desenvolvido por Daniel Santos">
+  <meta name="keywords" content="BuyEasy, lista de compras, app, Daniel Santos, Android">
   <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: #fff;
+      padding: 2rem 0;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+    }
+    
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+    }
+    
+    header h1 i {
+      margin-right: 15px;
+      color: #667eea;
+    }
+    
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+      position: relative;
+      z-index: 1;
+    }
+    
+    header nav {
+      position: relative;
+      z-index: 1;
+    }
+    
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      display: inline-block;
+    }
+    
+    header nav a:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    main {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+    
+    section {
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    
+    section h2 {
+      font-size: 2.5rem;
+      color: #1e3c72;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+    
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border-radius: 2px;
+    }
+    
+    section p {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .banner-image {
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      margin: 2rem 0;
+      transition: transform 0.3s ease;
+    }
+    
+    .banner-image:hover {
+      transform: scale(1.02);
+    }
+    
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+      color: #fff;
+      padding: 15px 35px;
+      border-radius: 25px;
+      font-size: 1.2em;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .btn:hover::before {
+      left: 100%;
+    }
+    
+    .btn:hover {
+      background: linear-gradient(135deg, #218838 0%, #1ea085 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(40, 167, 69, 0.6);
+      color: white;
+    }
+    
+    footer {
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+    }
+    
+    footer p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    
+    @media (max-width: 700px) {
+      main {
+        margin: 2rem 1rem;
+        padding: 0 1rem;
+      }
+      
+      section {
+        padding: 2rem 1.5rem;
+      }
+      
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      section h2 {
+        font-size: 2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      section h2 {
+        font-size: 1.8rem;
+      }
+      
+      section {
+        padding: 1.5rem 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>BuyEasy</h1>
+    <h1><i class="fas fa-shopping-cart"></i> BuyEasy</h1>
     <p>Gerencie suas compras com facilidade</p>
     <nav>
-      <a href="../../index.html">Voltar</a>
+      <a href="../../index.html"><i class="fas fa-home"></i> Voltar ao Início</a>
     </nav>
   </header>
 
   <main>
     <section>
       <h2>Sobre o Aplicativo</h2>
-      <p>O BuyEasy foi desenvolvido para facilitar sua vida nas compras do dia a dia, permitindo controle rápido e eficiente.</p>
-      <img src="bann.png" alt="Banner BuyEasy" style="max-width:100%;border-radius:8px;">
-      <p><a href="https://play.google.com/store/apps/details?id=com.danielsantos.buyeasy" class="btn">Baixar na Play Store</a></p>
+      <p>O BuyEasy foi desenvolvido para facilitar sua vida nas compras do dia a dia, permitindo controle rápido e eficiente de suas listas de compras.</p>
+      <img src="bann.png" alt="Banner BuyEasy" class="banner-image">
+      <p><a href="https://play.google.com/store/apps/details?id=com.danielsantos.buyeasy" class="btn" target="_blank">
+        <i class="fab fa-google-play"></i> Baixar na Play Store
+      </a></p>
     </section>
   </main>
 
