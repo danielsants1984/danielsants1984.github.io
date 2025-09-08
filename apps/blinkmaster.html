@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- CSS do Bootstrap para o carrossel -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
@@ -241,6 +243,33 @@
       box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
     }
     
+    .carousel-container {
+      max-width: 400px;
+      margin: 2rem auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .carousel-item img {
+      border-radius: 15px;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+      background: rgba(102, 126, 234, 0.8);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin: auto 10px;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: 20px;
+      height: 20px;
+    }
+    
     footer {
       background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
       color: white;
@@ -279,6 +308,10 @@
       
       .features {
         grid-template-columns: 1fr;
+      }
+      
+      .carousel-container {
+        max-width: 100%;
       }
     }
     
@@ -341,10 +374,26 @@
         </div>
       </div>
       
-      <div class="screenshots">
-        <img src="apps/BlinkMaster/tela1.jpg" alt="Tela principal do Blink Master" class="screenshot">
-        <img src="apps/BlinkMaster/tela2.jpg" alt="Tela de jogo do Blink Master" class="screenshot">
-        <img src="apps/BlinkMaster/icone.svg" alt="Ícone do app" class="screenshot">
+      <h2><i class="fas fa-mobile-alt"></i> Capturas de Tela</h2>
+      <div class="carousel-container">
+        <div id="carouselBlinkMaster" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="apps/BlinkMaster/tela1.jpg" class="d-block w-100" alt="Tela principal do Blink Master">
+            </div>
+            <div class="carousel-item">
+              <img src="apps/BlinkMaster/tela2.jpg" class="d-block w-100" alt="Tela de jogo do Blink Master">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselBlinkMaster" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselBlinkMaster" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Próximo</span>
+          </button>
+        </div>
       </div>
       
       <p><strong>Será que você tem memória de mestre? 👀</strong></p>
@@ -359,5 +408,8 @@
   <footer>
     <p>&copy; 2025 Daniel Santos. Todos os direitos reservados.</p>
   </footer>
+  
+  <!-- JS do Bootstrap para o carrossel -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
