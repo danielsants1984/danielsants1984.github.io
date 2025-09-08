@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#5E2B8A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F05030;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF6B9D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8C42;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#backgroundGradient)"/>
+  
+  <!-- Title -->
+  <text x="400" y="100" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="white">Blink Master</text>
+  <text x="400" y="130" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="white" opacity="0.9">Jogo de Memória</text>
+  
+  <!-- Cards -->
+  <!-- Individual Card -->
+  <rect x="100" y="200" width="600" height="80" rx="15" fill="url(#cardGradient1)"/>
+  <text x="150" y="230" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">▶</text>
+  <text x="200" y="230" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">Individual</text>
+  <text x="200" y="255" font-family="Arial, sans-serif" font-size="16" fill="white" opacity="0.9">Jogue sozinho e teste sua memória</text>
+  
+  <!-- Ranking Card -->
+  <rect x="100" y="300" width="600" height="80" rx="15" fill="url(#cardGradient2)"/>
+  <text x="150" y="330" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">★</text>
+  <text x="200" y="330" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">Ranking</text>
+  <text x="200" y="355" font-family="Arial, sans-serif" font-size="16" fill="white" opacity="0.9">Veja as melhores pontuações</text>
+  
+  <!-- Settings Card -->
+  <rect x="100" y="400" width="600" height="80" rx="15" fill="url(#cardGradient2)"/>
+  <text x="150" y="430" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">⚙</text>
+  <text x="200" y="430" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">Configurações</text>
+  <text x="200" y="455" font-family="Arial, sans-serif" font-size="16" fill="white" opacity="0.9">Ajuste som, vibração e mais</text>
+  
+  <!-- Version -->
+  <text x="400" y="550" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="white" opacity="0.8">Versão 1.0</text>
+</svg>
