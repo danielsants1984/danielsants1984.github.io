@@ -201,11 +201,16 @@ section h2::after {
 
 .apps-carousel .carousel-item {
   padding: 2rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: transparent;
+  min-height: auto;
+  text-align: center;
+}
+
+.apps-carousel .carousel-item .app-card {
+  margin: 0 auto;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
 }
 
 .apps-carousel .carousel-control-prev,
@@ -747,8 +752,11 @@ section {
   }
   
   .apps-carousel .carousel-item {
-    min-height: 400px;
     padding: 1.5rem;
+  }
+  
+  .apps-carousel .carousel-item .app-card {
+    max-width: 100%;
   }
   
   .apps-carousel .carousel-control-prev,
