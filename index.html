@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- CSS do Bootstrap para o carrossel -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -41,52 +43,77 @@
     <!-- Seção Aplicativos -->
     <section id="apps">
       <h2><i class="fas fa-mobile-alt"></i> Meus Aplicativos</h2>
-      <div class="apps-grid">
-        <div class="app-card featured">
-          <div class="app-badge">Destaque</div>
-          <img src="apps/BuyEasy/icone.png" alt="Ícone BuyEasy">
-          <h3>BuyEasy</h3>
-          <p class="app-description">Crie suas listas de compras de forma ultrarápida, com facilidade e praticidade. O app mais eficiente para gerenciar suas compras do dia a dia.</p>
-          <div class="app-features">
-            <span class="feature-tag"><i class="fas fa-bolt"></i> Rápido</span>
-            <span class="feature-tag"><i class="fas fa-wifi"></i> Offline</span>
-            <span class="feature-tag"><i class="fas fa-globe"></i> Multilíngue</span>
+      <div class="apps-carousel">
+        <div id="carouselApps" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="app-card featured">
+                <div class="app-badge">Destaque</div>
+                <img src="apps/BuyEasy/icone.png" alt="Ícone BuyEasy">
+                <h3>BuyEasy</h3>
+                <p class="app-description">Crie suas listas de compras de forma ultrarápida, com facilidade e praticidade. O app mais eficiente para gerenciar suas compras do dia a dia.</p>
+                <div class="app-features">
+                  <span class="feature-tag"><i class="fas fa-bolt"></i> Rápido</span>
+                  <span class="feature-tag"><i class="fas fa-wifi"></i> Offline</span>
+                  <span class="feature-tag"><i class="fas fa-globe"></i> Multilíngue</span>
+                </div>
+                <div class="app-actions">
+                  <a href="apps/buyeasy.html" class="btn btn-primary"><i class="fas fa-info-circle"></i> Saiba Mais</a>
+                  <a href="https://play.google.com/store/apps/details?id=com.danielsantos.buyeasy" target="_blank" class="btn btn-download"><i class="fab fa-google-play"></i> Play Store</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="carousel-item">
+              <div class="app-card featured">
+                <div class="app-badge">Novo</div>
+                <img src="apps/BlinkMaster/icone.svg" alt="Ícone Blink Master">
+                <h3>Blink Master</h3>
+                <p class="app-description">Teste sua memória e seus reflexos! Memorize a sequência dos círculos que piscam e repita sem errar. 20 fases com dificuldade progressiva.</p>
+                <div class="app-features">
+                  <span class="feature-tag"><i class="fas fa-brain"></i> Memória</span>
+                  <span class="feature-tag"><i class="fas fa-gamepad"></i> Puzzle</span>
+                  <span class="feature-tag"><i class="fas fa-mobile-alt"></i> Mobile</span>
+                </div>
+                <div class="app-actions">
+                  <a href="apps/blinkmaster.html" class="btn btn-primary"><i class="fas fa-info-circle"></i> Saiba Mais</a>
+                  <span class="btn btn-disabled"><i class="fas fa-clock"></i> Em Breve</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="carousel-item">
+              <div class="app-card featured">
+                <div class="app-badge">Novo</div>
+                <img src="apps/Math_Rush/icone.png" alt="Ícone Math Rush">
+                <h3>Math Rush</h3>
+                <p class="app-description">Jogo de matemática educativo que testa sua velocidade e raciocínio lógico! Resolva contas rápidas e acumule pontos em níveis crescentes de dificuldade.</p>
+                <div class="app-features">
+                  <span class="feature-tag"><i class="fas fa-calculator"></i> Matemática</span>
+                  <span class="feature-tag"><i class="fas fa-graduation-cap"></i> Educativo</span>
+                  <span class="feature-tag"><i class="fas fa-brain"></i> Brain Training</span>
+                </div>
+                <div class="app-actions">
+                  <a href="apps/mathrush.html" class="btn btn-primary"><i class="fas fa-info-circle"></i> Saiba Mais</a>
+                  <span class="btn btn-disabled"><i class="fas fa-clock"></i> Em Breve</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="app-actions">
-            <a href="apps/buyeasy.html" class="btn btn-primary"><i class="fas fa-info-circle"></i> Saiba Mais</a>
-            <a href="https://play.google.com/store/apps/details?id=com.danielsantos.buyeasy" target="_blank" class="btn btn-download"><i class="fab fa-google-play"></i> Play Store</a>
-          </div>
-        </div>
-        
-        <div class="app-card featured">
-          <div class="app-badge">Novo</div>
-          <img src="apps/BlinkMaster/icone.svg" alt="Ícone Blink Master">
-          <h3>Blink Master</h3>
-          <p class="app-description">Teste sua memória e seus reflexos! Memorize a sequência dos círculos que piscam e repita sem errar. 20 fases com dificuldade progressiva.</p>
-          <div class="app-features">
-            <span class="feature-tag"><i class="fas fa-brain"></i> Memória</span>
-            <span class="feature-tag"><i class="fas fa-gamepad"></i> Puzzle</span>
-            <span class="feature-tag"><i class="fas fa-mobile-alt"></i> Mobile</span>
-          </div>
-          <div class="app-actions">
-            <a href="apps/blinkmaster.html" class="btn btn-primary"><i class="fas fa-info-circle"></i> Saiba Mais</a>
-            <span class="btn btn-disabled"><i class="fas fa-clock"></i> Em Breve</span>
-          </div>
-        </div>
-        
-        <div class="app-card featured">
-          <div class="app-badge">Novo</div>
-          <img src="apps/Math_Rush/icone.png" alt="Ícone Math Rush">
-          <h3>Math Rush</h3>
-          <p class="app-description">Jogo de matemática educativo que testa sua velocidade e raciocínio lógico! Resolva contas rápidas e acumule pontos em níveis crescentes de dificuldade.</p>
-          <div class="app-features">
-            <span class="feature-tag"><i class="fas fa-calculator"></i> Matemática</span>
-            <span class="feature-tag"><i class="fas fa-graduation-cap"></i> Educativo</span>
-            <span class="feature-tag"><i class="fas fa-brain"></i> Brain Training</span>
-          </div>
-          <div class="app-actions">
-            <a href="apps/mathrush.html" class="btn btn-primary"><i class="fas fa-info-circle"></i> Saiba Mais</a>
-            <span class="btn btn-disabled"><i class="fas fa-clock"></i> Em Breve</span>
+          
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselApps" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselApps" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Próximo</span>
+          </button>
+          
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselApps" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselApps" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselApps" data-bs-slide-to="2"></button>
           </div>
         </div>
       </div>
@@ -258,5 +285,8 @@
       observer.observe(section);
     });
   </script>
+  
+  <!-- JS do Bootstrap para o carrossel -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -187,6 +187,60 @@ section h2::after {
   margin-top: 2rem;
 }
 
+/* Carrossel de aplicativos */
+.apps-carousel {
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.apps-carousel .carousel-inner {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.apps-carousel .carousel-item {
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apps-carousel .carousel-control-prev,
+.apps-carousel .carousel-control-next {
+  background: rgba(102, 126, 234, 0.8);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: auto 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.apps-carousel .carousel-control-prev-icon,
+.apps-carousel .carousel-control-next-icon {
+  width: 25px;
+  height: 25px;
+}
+
+.apps-carousel .carousel-indicators {
+  bottom: 20px;
+}
+
+.apps-carousel .carousel-indicators button {
+  background-color: rgba(102, 126, 234, 0.5);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+}
+
+.apps-carousel .carousel-indicators button.active {
+  background-color: #667eea;
+}
+
 /* Cards de aplicativos */
 .app-card {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -690,6 +744,18 @@ section {
   .app-card img {
     width: 100px;
     height: 100px;
+  }
+  
+  .apps-carousel .carousel-item {
+    min-height: 400px;
+    padding: 1.5rem;
+  }
+  
+  .apps-carousel .carousel-control-prev,
+  .apps-carousel .carousel-control-next {
+    width: 40px;
+    height: 40px;
+    margin: auto 10px;
   }
 }
 
