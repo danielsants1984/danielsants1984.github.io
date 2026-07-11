@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidade - SafeWallet</title>
+    <title>Política de Privacidade - Safe Wallet</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -70,59 +70,37 @@
 </head>
 <body>
     <div class="container">
-        <h1>Política de Privacidade - SafeWallet</h1>
-        <div class="date">Última atualização: 21 de junho de 2026</div>
+        <h1>Política de Privacidade - Safe Wallet</h1>
+        <div class="date">Última atualização: 11 de julho de 2026</div>
         
-        <p>A sua privacidade e a segurança dos seus ativos são a nossa prioridade absoluta. Esta Política de Privacidade descreve como o aplicativo <strong>SafeWallet</strong> ("nós", "nosso" ou "aplicativo"), desenvolvido por <strong>Daniel Santos</strong>, trata as suas informações.</p>
-        
-        <p>Como uma carteira de criptomoedas de auto-custódia (offline-first), o SafeWallet foi projetado do zero para respeitar a soberania dos seus dados. <strong>Nós não possuímos servidores centralizados, não rastreamos suas atividades e não coletamos seus dados pessoais.</strong></p>
+        <p>A sua privacidade e a segurança dos seus ativos são a nossa prioridade absoluta. O <strong>Safe Wallet</strong> é uma carteira de auto-custódia projetada para oferecer soberania financeira total. Esta política descreve como protegemos seus dados.</p>
 
-        <h2>1. Coleta e Processamento de Dados (Zero Telemetria)</h2>
-        <p>O aplicativo SafeWallet opera sob a premissa de privacidade máxima por padrão.</p>
+        <h2>1. Soberania e Auto-Custódia</h2>
+        <p>O Safe Wallet opera sob o princípio de <strong>"suas chaves, seus bitcoins"</strong>. Não somos um serviço de custódia. Suas chaves privadas e mnemônicos (BIP-39) nunca saem do seu dispositivo, garantindo que apenas você tenha acesso aos seus fundos.</p>
+
+        <h2>2. Coleta de Dados (Privacidade por Design)</h2>
+        <p>Não coletamos dados pessoais identificáveis (PII), como nomes, e-mails (exceto para autenticação opcional do Google), endereços ou números de telefone. Não há rastreamento de comportamento do usuário, telemetria ou análise de uso.</p>
+
+        <h2>3. Segurança do Dispositivo</h2>
+        <p>Utilizamos tecnologias avançadas de segurança do Android, incluindo o <strong>Android KeyStore</strong> para criptografia AES-GCM baseada em hardware. O acesso ao aplicativo é estritamente protegido pelo seu PIN de segurança e autenticação biométrica.</p>
+
+        <h2>4. Backup em Nuvem e Criptografia</h2>
+        <p>O recurso de backup no Google Drive (Premium) utiliza <strong>criptografia de ponta a ponta</strong>. Seus dados são cifrados localmente com uma senha definida exclusivamente por você antes do envio. Nem o Google, nem o desenvolvedor podem acessar o conteúdo do seu backup.</p>
+
+        <h2>5. Uso de Permissões</h2>
         <ul>
-            <li><strong>Dados Pessoais:</strong> Não solicitamos e não coletamos nomes, endereços de e-mail (a menos que você entre em contato direto conosco para suporte), números de telefone, CPF, ou qualquer outra informação de identificação pessoal.</li>
-            <li><strong>Chaves Privadas e Sementes de Recuperação (Seed Phrases):</strong> Suas palavras-semente (Mnemônicos BIP-39), chaves privadas e endereços gerados correspondentes são gerados localmente no seu dispositivo. Essas informações sensíveis <strong>nunca saem do seu aparelho</strong>. Nós não temos acesso a elas e nunca poderemos recuperá-las caso sejam perdidas.</li>
-            <li><strong>Dados de Transações:</strong> Todo o processamento de transações e saldos é executado diretamente no dispositivo do usuário por meio de chamadas RPC descentralizadas. Nenhuma informação sobre suas transações financeiras é enviada à nossa equipe ou a terceiros de maneira identificável.</li>
-            <li><strong>Cookies e Análise de Uso:</strong> O SafeWallet não usa ferramentas de rastreamento de terceiros (como Google Analytics, Firebase Analytics, Mixpanel, etc.) ou cookies de qualquer tipo.</li>
+            <li><strong>Câmera:</strong> Usada exclusivamente para escanear QR Codes de endereços de destino.</li>
+            <li><strong>Biometria:</strong> Usada para desbloqueio rápido e seguro do aplicativo.</li>
+            <li><strong>Internet:</strong> Necessária apenas para sincronizar saldos, histórico e transmitir transações.</li>
         </ul>
 
-        <h2>2. Armazenamento e Segurança dos Dados</h2>
-        <p>Todas as informações necessárias para o funcionamento da carteira são mantidas estritamente no seu dispositivo local:</p>
-        <ul>
-            <li><strong>Criptografia Local:</strong> Suas palavras de segurança e PIN de acesso são armazenados em um banco de dados local Room, protegidos e criptografados utilizando algoritmos de nível militar (<code>AES/GCM/NoPadding</code>) baseados no ecossistema Android KeyStore.</li>
-            <li><strong>Segurança Física:</strong> O acesso ao aplicativo é protegido por autenticação biométrica do sistema ou por um código PIN definido pelo usuário.</li>
-            <li><strong>Wipe Automático / Limpeza Manual:</strong> O SafeWallet inclui uma função de "Factory Setup" nas configurações administrativas, que permite apagar todos os registros, banco de dados e dados criptografados do telefone instantaneamente de forma definitiva.</li>
-        </ul>
-
-        <h2>3. Permissões de Dispositivo Solicitadas e Justificativas</h2>
-        <p>O SafeWallet solicita acesso a determinados recursos do sistema exclusivamente para viabilizar as funcionalidades da carteira. Estas permissões nunca são utilizadas de forma oculta ou para fins publicitários:</p>
-        <ol>
-            <li><strong>Câmera (<code>Manifest.permission.CAMERA</code>):</strong>
-                <br><em>Finalidade:</em> Utilizada pelo scanner de QR Code integrado. Tem como objetivo único obter endereços de Bitcoin ou dados de transações sem digitar manualmente. Nenhuma imagem ou vídeo é filmado ou extraído na nuvem.
-            </li>
-            <li><strong>Autenticação Biométrica (<code>BiometricPrompt</code>):</strong>
-                <br><em>Finalidade:</em> Utilizada para autenticação do usuário. Facilita o desbloqueio seguro do aplicativo. As impressões digitais ou face são processadas exclusivamente pelo sistema operacional Android de maneira isolada. O aplicativo não tem acesso a esses dados biométricos.
-            </li>
-        </ol>
-
-        <h2>4. Direitos dos Usuários (LGPD e GDPR)</h2>
-        <p>Conforme a Lei Geral de Proteção de Dados (LGPD - Brasil) e com a General Data Protection Regulation (GDPR - Europa):</p>
-        <p>Como todos os seus dados ficam estocados localmente e de forma descentralizada, você possui total controle sobre eles:</p>
-        <ul>
-            <li><strong>Exclusão total:</strong> Você pode excluir todos os seus dados a qualquer momento utilizando a opção "Limpar Todos os Dados e Reiniciar" na central de segurança ("Factory Setup") ou limpando os dados de armazenamento do aplicativo em Ajustes no seu Android.</li>
-            <li><strong>Portabilidade:</strong> Você pode portar sua carteira para qualquer outro software compatível utilizando as suas 12 ou 24 palavras (Seed Phrase).</li>
-        </ul>
-
-        <h2>5. Serviços de Terceiros</h2>
-        <p>Para obter cotações de preços de ativos de forma em tempo real ou enviar transações brutas à rede descentralizada, o aplicativo interage com Nodes públicos ou APIs abertas de blockchain. Esses provedores de infraestrutura externa podem registrar metadados padrão da Web (como seu endereço IP), mas esses metadados não são correlacionados ao seu PIN, nome, e-mail ou chaves privadas do SafeWallet de forma alguma.</p>
-
-        <h2>6. Alterações nesta Política de Privacidade</h2>
-        <p>Podemos atualizar nossa Política de Privacidade periodicamente. Publicaremos as alterações atualizando a data colocada no topo desta página. Recomendamos revisar esta Política de Privacidade para se manter informado.</p>
+        <h2>6. Direitos dos Usuários (LGPD / GDPR)</h2>
+        <p>Você possui controle absoluto sobre seus dados. Como as informações são armazenadas localmente, você pode apagá-las permanentemente a qualquer momento utilizando o recurso de "Resetar para Padrões de Fábrica" ou limpando os dados do aplicativo nas configurações do sistema.</p>
 
         <div class="divider"></div>
 
         <h2>7. Contato e Suporte</h2>
-        <p>Se você tiver alguma dúvida técnica, sugestão ou quiser entender melhor sobre a criptografia offline-first do SafeWallet, sinta-se à vontade para entrar em contato:</p>
+        <p>Se você tiver alguma dúvida técnica ou sobre privacidade, entre em contato:</p>
         <ul>
             <li><strong>Desenvolvedor:</strong> Daniel Santos</li>
             <li><strong>E-mail:</strong> <a href="mailto:danielj.santos13@gmail.com">danielj.santos13@gmail.com</a></li>
