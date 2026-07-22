@@ -3,161 +3,166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daniel Santos - Desenvolvedor de Aplicativos</title>
+  <title>Daniel Santos | Desenvolvedor Mobile</title>
   <meta name="description" content="Portfólio de Daniel Santos - Desenvolvedor de aplicativos móveis e soluções digitais">
   <meta name="keywords" content="desenvolvedor, aplicativos, mobile, Daniel Santos, BuyEasy, SafeWallet, Math Rush, Blink Master">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- CSS do Bootstrap para o carrossel -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- JS do Bootstrap para o carrossel -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1><i class="fas fa-code"></i> Daniel Santos</h1>
-      <p>Desenvolvedor de Aplicativos & Soluções Digitais</p>
-      <nav>
-        <a href="#inicio"><i class="fas fa-home"></i> Início</a>
-        <a href="#apps"><i class="fas fa-mobile-alt"></i> Aplicativos</a>
-        <a href="#sobre"><i class="fas fa-user"></i> Sobre</a>
-        <a href="#skills"><i class="fas fa-tools"></i> Habilidades</a>
-        <a href="#contato"><i class="fas fa-envelope"></i> Contato</a>
+  
+  <!-- Navbar Fixa -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#inicio" class="logo">
+        <i class="fas fa-code"></i> Daniel Santos
+      </a>
+      <nav class="nav-links">
+        <a href="#inicio">Início</a>
+        <a href="#apps">Aplicativos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#skills">Habilidades</a>
+        <a href="#contato" class="btn-nav">Contato</a>
       </nav>
     </div>
   </header>
 
   <main>
     <!-- Seção Hero -->
-    <section id="inicio" class="hero-section">
-      <div class="hero-content">
-        <h2>Transformando Ideias em Aplicativos Incríveis</h2>
-        <p>Desenvolvo soluções móveis que facilitam a vida das pessoas, com foco em usabilidade e design intuitivo.</p>
-        <div class="hero-buttons">
-          <a href="#apps" class="btn btn-primary"><i class="fas fa-rocket"></i> Ver Projetos</a>
-          <a href="#contato" class="btn btn-secondary"><i class="fas fa-paper-plane"></i> Fale Comigo</a>
+    <section id="inicio" class="hero">
+      <div class="container hero-container">
+        <div class="hero-text animate-up">
+          <span class="badge">Desenvolvedor de Aplicativos & Soluções Digitais</span>
+          <h1>Transformando Ideias em <br><span>Aplicativos Incríveis</span></h1>
+          <p>Desenvolvo soluções móveis que facilitam a vida das pessoas, com foco em segurança, usabilidade e um design altamente intuitivo.</p>
+          <div class="hero-buttons">
+            <a href="#apps" class="btn btn-primary"><i class="fas fa-rocket"></i> Ver Projetos</a>
+            <a href="#contato" class="btn btn-outline"><i class="fab fa-github"></i> Meu GitHub</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Seção Aplicativos -->
-    <section id="apps">
-      <h2><i class="fas fa-mobile-alt"></i> Meus Aplicativos</h2>
-      <div class="apps-carousel">
-        <div id="carouselApps" class="carousel slide" data-bs-ride="false">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="app-card featured">
-                <div class="app-badge">Destaque</div>
-                <img src="apps/BuyEasy/icone.png" alt="Ícone BuyEasy">
-                <h3>BuyEasy</h3>
-                <p class="app-description">Crie suas listas de compras de forma ultrarápida, com facilidade e praticidade. O app mais eficiente para gerenciar suas compras do dia a dia.</p>
-                <div class="app-features">
-                  <span class="feature-tag"><i class="fas fa-bolt"></i> Rápido</span>
-                  <span class="feature-tag"><i class="fas fa-wifi"></i> Offline</span>
-                  <span class="feature-tag"><i class="fas fa-globe"></i> Multilíngue</span>
-                </div>
-                <div class="app-actions">
-                  <a href="apps/buyeasy.html" class="btn btn-primary"><i class="fas fa-info-circle"></i> Saiba Mais</a>
-                  <a href="https://play.google.com/store/apps/details?id=com.danielsantos.buyeasy" target="_blank" class="btn btn-download"><i class="fab fa-google-play"></i> Play Store</a>
-                </div>
+    <!-- Seção Aplicativos (Grid) -->
+    <section id="apps" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header animate-up">
+          <h2>Meus Aplicativos</h2>
+          <p>Conheça os projetos que desenvolvi e publiquei recentemente.</p>
+        </div>
+        
+        <div class="apps-grid">
+          
+          <!-- Card: BuyEasy -->
+          <div class="app-card animate-up">
+            <div class="app-card-header">
+              <img src="apps/BuyEasy/icone.png" alt="Ícone BuyEasy">
+              <span class="status-badge highlight">Destaque</span>
+            </div>
+            <div class="app-card-body">
+              <h3>BuyEasy</h3>
+              <p>Crie suas listas de compras de forma ultrarápida, com facilidade e praticidade. O app mais eficiente para gerenciar suas compras do dia a dia.</p>
+              <div class="tags">
+                <span><i class="fas fa-bolt"></i> Rápido</span>
+                <span><i class="fas fa-wifi"></i> Offline</span>
+                <span><i class="fas fa-globe"></i> Multilíngue</span>
               </div>
             </div>
-            
-            <div class="carousel-item">
-              <div class="app-card featured">
-                <div class="app-badge">Novo</div>
-                <img src="apps/BlinkMaster/icone.svg" alt="Ícone Blink Master">
-                <h3>Blink Master</h3>
-                <p class="app-description">Teste sua memória e seus reflexos! Memorize a sequência dos círculos que piscam e repita sem errar. 20 fases com dificuldade progressiva.</p>
-                <div class="app-features">
-                  <span class="feature-tag"><i class="fas fa-brain"></i> Memória</span>
-                  <span class="feature-tag"><i class="fas fa-gamepad"></i> Puzzle</span>
-                  <span class="feature-tag"><i class="fas fa-mobile-alt"></i> Mobile</span>
-                </div>
-                <div class="app-actions">
-                  <a href="apps/blinkmaster.html" class="btn btn-primary"><i class="fas fa-info-circle"></i> Saiba Mais</a>
-                  <a href="https://play.google.com/store/apps/details?id=com.danielsantos.blinkmaster" target="_blank" class="btn btn-download"><i class="fab fa-google-play"></i> Play Store</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Início do Card: SafeWallet -->
-            <div class="carousel-item">
-              <div class="app-card featured">
-                <div class="app-badge">Novo</div>
-                <img src="apps/SafeWallet/icone.png" alt="Ícone SafeWallet">
-                <h3>SafeWallet</h3>
-                <p class="app-description">Carteira Bitcoin de auto-custódia (não-custodial) desenvolvida para quem não abre mão da segurança, privacidade e soberania.</p>
-                <div class="app-features">
-                  <span class="feature-tag"><i class="fas fa-wallet"></i> Finanças</span>
-                  <span class="feature-tag"><i class="fas fa-shield-alt"></i> Seguro</span>
-                  <span class="feature-tag"><i class="fas fa-chart-pie"></i> Gestão</span>
-                </div>
-                <div class="app-actions">
-                  <a href="apps/safewallet.html" class="btn btn-primary"><i class="fas fa-info-circle"></i> Saiba Mais</a>
-                  <a href="https://play.google.com/store/apps/details?id=com.danielsantos.safewallet" target="_blank" class="btn btn-download"><i class="fab fa-google-play"></i> Play Store</a>
-                </div>
-              </div>
-            </div>
-            <!-- Fim do Card: SafeWallet -->
-            
-            <div class="carousel-item">
-              <div class="app-card featured">
-                <div class="app-badge">Novo</div>
-                <img src="apps/Math_Rush/icone.png" alt="Ícone Math Rush">
-                <h3>Math Rush</h3>
-                <p class="app-description">Jogo de matemática educativo que testa sua velocidade e raciocínio lógico! Resolva contas rápidas e acumule pontos em níveis crescentes de dificuldade.</p>
-                <div class="app-features">
-                  <span class="feature-tag"><i class="fas fa-calculator"></i> Matemática</span>
-                  <span class="feature-tag"><i class="fas fa-graduation-cap"></i> Educativo</span>
-                  <span class="feature-tag"><i class="fas fa-brain"></i> Brain Training</span>
-                </div>
-                <div class="app-actions">
-                  <a href="apps/mathrush.html" class="btn btn-primary"><i class="fas fa-info-circle"></i> Saiba Mais</a>
-                  <a href="https://play.google.com/store/apps/details?id=com.danielsantos.mathrush" target="_blank" class="btn btn-download"><i class="fab fa-google-play"></i> Play Store</a>
-                </div>
-              </div>
+            <div class="app-card-footer">
+              <a href="apps/buyeasy.html" class="btn-link">Detalhes <i class="fas fa-arrow-right"></i></a>
+              <a href="https://play.google.com/store/apps/details?id=com.danielsantos.buyeasy" target="_blank" class="btn btn-playstore"><i class="fab fa-google-play"></i> Play Store</a>
             </div>
           </div>
-          
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselApps" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-            <span class="visually-hidden">Anterior</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselApps" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-            <span class="visually-hidden">Próximo</span>
-          </button>
-          
+
+          <!-- Card: Blink Master -->
+          <div class="app-card animate-up" style="transition-delay: 0.1s;">
+            <div class="app-card-header">
+              <img src="apps/BlinkMaster/icone.svg" alt="Ícone Blink Master">
+              <span class="status-badge new">Novo</span>
+            </div>
+            <div class="app-card-body">
+              <h3>Blink Master</h3>
+              <p>Teste sua memória e seus reflexos! Memorize a sequência dos círculos que piscam e repita sem errar. 20 fases com dificuldade progressiva.</p>
+              <div class="tags">
+                <span><i class="fas fa-brain"></i> Memória</span>
+                <span><i class="fas fa-gamepad"></i> Puzzle</span>
+              </div>
+            </div>
+            <div class="app-card-footer">
+              <a href="apps/blinkmaster.html" class="btn-link">Detalhes <i class="fas fa-arrow-right"></i></a>
+              <a href="https://play.google.com/store/apps/details?id=com.danielsantos.blinkmaster" target="_blank" class="btn btn-playstore"><i class="fab fa-google-play"></i> Play Store</a>
+            </div>
+          </div>
+
+          <!-- Card: SafeWallet -->
+          <div class="app-card animate-up" style="transition-delay: 0.2s;">
+            <div class="app-card-header">
+              <img src="apps/SafeWallet/icone.png" alt="Ícone SafeWallet">
+              <span class="status-badge new">Novo</span>
+            </div>
+            <div class="app-card-body">
+              <h3>SafeWallet</h3>
+              <p>Carteira Bitcoin de auto-custódia (não-custodial) desenvolvida para quem não abre mão da segurança, privacidade e soberania.</p>
+              <div class="tags">
+                <span><i class="fas fa-wallet"></i> Finanças</span>
+                <span><i class="fas fa-shield-alt"></i> Seguro</span>
+              </div>
+            </div>
+            <div class="app-card-footer">
+              <a href="apps/safewallet.html" class="btn-link">Detalhes <i class="fas fa-arrow-right"></i></a>
+              <a href="https://play.google.com/store/apps/details?id=com.danielsantos.safewallet" target="_blank" class="btn btn-playstore"><i class="fab fa-google-play"></i> Play Store</a>
+            </div>
+          </div>
+
+          <!-- Card: Math Rush -->
+          <div class="app-card animate-up" style="transition-delay: 0.3s;">
+            <div class="app-card-header">
+              <img src="apps/Math_Rush/icone.png" alt="Ícone Math Rush">
+              <span class="status-badge new">Novo</span>
+            </div>
+            <div class="app-card-body">
+              <h3>Math Rush</h3>
+              <p>Jogo de matemática educativo que testa sua velocidade e raciocínio lógico! Resolva contas rápidas e acumule pontos.</p>
+              <div class="tags">
+                <span><i class="fas fa-calculator"></i> Educação</span>
+                <span><i class="fas fa-brain"></i> Lógica</span>
+              </div>
+            </div>
+            <div class="app-card-footer">
+              <a href="apps/mathrush.html" class="btn-link">Detalhes <i class="fas fa-arrow-right"></i></a>
+              <a href="https://play.google.com/store/apps/details?id=com.danielsantos.mathrush" target="_blank" class="btn btn-playstore"><i class="fab fa-google-play"></i> Play Store</a>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Seção Sobre -->
-    <section id="sobre">
-      <h2><i class="fas fa-user"></i> Sobre Mim</h2>
-      <div class="about-content">
-        <div class="about-text">
-          <p>Sou Daniel Santos, um desenvolvedor apaixonado por criar soluções digitais que realmente fazem a diferença na vida das pessoas.</p>
-          <p>Com foco em aplicativos móveis, busco sempre a excelência em usabilidade, design e performance. Cada projeto é uma oportunidade de aprender e evoluir.</p>
-          <div class="about-stats">
-            <div class="stat-item">
+    <!-- Seção Sobre & Estatísticas -->
+    <section id="sobre" class="section-padding">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text animate-up">
+            <h2>Sobre Mim</h2>
+            <p>Sou <strong>Daniel Santos</strong>, um desenvolvedor apaixonado por criar soluções digitais que realmente fazem a diferença na vida das pessoas.</p>
+            <p>Com foco em aplicativos móveis, busco sempre a excelência em usabilidade, design e performance. Cada projeto é uma oportunidade de aprender e evoluir no ecossistema de desenvolvimento.</p>
+          </div>
+          <div class="about-stats animate-up">
+            <div class="stat-card">
               <i class="fas fa-mobile-alt"></i>
-              <span class="stat-number">5+</span>
-              <span class="stat-label">Apps Desenvolvidos</span>
+              <h3>5+</h3>
+              <p>Apps Desenvolvidos</p>
             </div>
-            <div class="stat-item">
+            <div class="stat-card">
               <i class="fas fa-users"></i>
-              <span class="stat-number">1000+</span>
-              <span class="stat-label">Usuários Ativos</span>
+              <h3>1000+</h3>
+              <p>Usuários Ativos</p>
             </div>
-            <div class="stat-item">
+            <div class="stat-card">
               <i class="fas fa-star"></i>
-              <span class="stat-number">4.5</span>
-              <span class="stat-label">Avaliação Média</span>
+              <h3>4.5</h3>
+              <p>Avaliação Média</p>
             </div>
           </div>
         </div>
@@ -165,98 +170,74 @@
     </section>
 
     <!-- Seção Habilidades -->
-    <section id="skills">
-      <h2><i class="fas fa-tools"></i> Minhas Habilidades</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3><i class="fas fa-mobile-alt"></i> Desenvolvimento Mobile</h3>
-          <div class="skill-items">
-            <span class="skill-item">Android Native</span>
-            <span class="skill-item">Kotlin</span>
-            <span class="skill-item">Java</span>
-            <span class="skill-item">React Native</span>
-          </div>
+    <section id="skills" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header animate-up">
+          <h2>Minhas Habilidades</h2>
+          <p>Tecnologias e ferramentas que utilizo no meu dia a dia.</p>
         </div>
-        
-        <div class="skill-category">
-          <h3><i class="fas fa-code"></i> Linguagens & Frameworks</h3>
-          <div class="skill-items">
-            <span class="skill-item">JavaScript</span>
-            <span class="skill-item">Python</span>
-            <span class="skill-item">HTML/CSS</span>
-            <span class="skill-item">SQL</span>
+        <div class="skills-grid animate-up">
+          <div class="skill-box">
+            <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+            <h3>Mobile</h3>
+            <p>Android Native, Kotlin, Java, React Native.</p>
           </div>
-        </div>
-        
-        <div class="skill-category">
-          <h3><i class="fas fa-palette"></i> Design & UX</h3>
-          <div class="skill-items">
-            <span class="skill-item">Material Design</span>
-            <span class="skill-item">UI/UX</span>
-            <span class="skill-item">Figma</span>
-            <span class="skill-item">Responsivo</span>
+          <div class="skill-box">
+            <div class="skill-icon"><i class="fas fa-code"></i></div>
+            <h3>Linguagens</h3>
+            <p>JavaScript, Python, HTML/CSS, SQL.</p>
+          </div>
+          <div class="skill-box">
+            <div class="skill-icon"><i class="fas fa-palette"></i></div>
+            <h3>Design & UX</h3>
+            <p>Material Design, UI/UX, Figma, Design Responsivo.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Seção Contato -->
-    <section id="contato">
-      <h2><i class="fas fa-envelope"></i> Entre em Contato</h2>
-      <div class="contact-content">
-        <div class="contact-info">
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <div>
-              <h4>Email</h4>
-              <a href="mailto:danielj.santos13@gmail.com">danielj.santos13@gmail.com</a>
+    <section id="contato" class="section-padding">
+      <div class="container">
+        <div class="contact-box animate-up">
+          <div class="contact-info">
+            <h2>Vamos trabalhar juntos?</h2>
+            <p>Interessado em um projeto ou tem alguma dúvida? Sinta-se à vontade para entrar em contato através dos meus canais oficiais.</p>
+            <div class="contact-links">
+              <a href="mailto:danielj.santos13@gmail.com" class="contact-item">
+                <div class="icon-circle"><i class="fas fa-envelope"></i></div>
+                <span>danielj.santos13@gmail.com</span>
+              </a>
+              <a href="https://github.com/danielsants1984" target="_blank" class="contact-item">
+                <div class="icon-circle"><i class="fab fa-github"></i></div>
+                <span>github.com/danielsants1984</span>
+              </a>
+              <a href="#" target="_blank" class="contact-item">
+                <div class="icon-circle"><i class="fab fa-linkedin"></i></div>
+                <span>LinkedIn / Daniel Santos</span>
+              </a>
             </div>
           </div>
-          
-          <div class="contact-item">
-            <i class="fab fa-github"></i>
-            <div>
-              <h4>GitHub</h4>
-              <a href="https://github.com/danielsants1984" target="_blank">@danielsants1984</a>
-            </div>
+          <div class="contact-cta">
+            <a href="mailto:danielj.santos13@gmail.com" class="btn btn-primary btn-large">
+              <i class="fas fa-paper-plane"></i> Enviar um E-mail
+            </a>
           </div>
-          
-          <div class="contact-item">
-            <i class="fab fa-linkedin"></i>
-            <div>
-              <h4>LinkedIn</h4>
-              <a href="#" target="_blank">Daniel Santos</a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="contact-message">
-          <p>Interessado em trabalhar juntos ou tem alguma dúvida? Não hesite em entrar em contato!</p>
-          <a href="mailto:danielj.santos13@gmail.com" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar Mensagem</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4>Daniel Santos</h4>
-        <p>Transformando ideias em realidade digital</p>
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <h3><i class="fas fa-code"></i> Daniel Santos</h3>
+        <p>Transformando ideias em realidade digital.</p>
       </div>
-      <div class="footer-section">
-        <h4>Links Rápidos</h4>
-        <a href="#apps">Aplicativos</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#contato">Contato</a>
-      </div>
-      <div class="footer-section">
-        <h4>Redes Sociais</h4>
-        <div class="social-links">
-          <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-        </div>
+      <div class="footer-social">
+        <a href="https://github.com/danielsants1984" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -265,41 +246,39 @@
   </footer>
 
   <script>
-    // Smooth scrolling para links internos
+    // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
     });
 
-    // Animação de entrada para elementos
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
+    // Animação ao rolar a página (Fade in)
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.add('visible');
         }
       });
     }, observerOptions);
 
-    // Observar todas as seções
-    document.querySelectorAll('section').forEach(section => {
-      section.style.opacity = '0';
-      section.style.transform = 'translateY(30px)';
-      section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(section);
+    document.querySelectorAll('.animate-up').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Efeito de sombra na navbar ao dar scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
     });
   </script>
 </body>
