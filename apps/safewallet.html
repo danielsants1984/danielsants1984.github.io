@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SafeWallet - Daniel Santos</title>
-  <meta name="description" content="SafeWallet - O seu novo gerenciador financeiro seguro e prático. Desenvolvido por Daniel Santos">
-  <meta name="keywords" content="SafeWallet, finanças, controle financeiro, carteira, app, Daniel Santos, Android">
+  <title>SafeWallet - Carteira Bitcoin Soberana | Daniel Santos</title>
+  <meta name="description" content="SafeWallet - Carteira Bitcoin de auto-custódia (não-custodial) com segurança de nível militar, privacidade absoluta e zero telemetria. Desenvolvido por Daniel Santos.">
+  <meta name="keywords" content="SafeWallet, Bitcoin, carteira bitcoin, auto-custódia, BIP-39, criptomoedas, Daniel Santos, segurança militar, privacidade, Android, Electrum, RBF">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,20 +14,22 @@
   <style>
     body {
       font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #181b26 0%, #252a3b 100%);
+      color: #333;
       margin: 0;
       padding: 0;
       min-height: 100vh;
     }
     
     header {
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
       color: #fff;
-      padding: 2rem 0;
+      padding: 2.5rem 0;
       text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
       position: relative;
       overflow: hidden;
+      border-bottom: 2px solid #f7931a;
     }
     
     header::before {
@@ -37,22 +39,22 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-      opacity: 0.3;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.05"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.5;
     }
     
     header h1 {
       font-size: 3rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
       position: relative;
       z-index: 1;
     }
     
     header h1 i {
       margin-right: 15px;
-      color: #667eea;
+      color: #f7931a; /* Cor Ouro Bitcoin */
     }
     
     header p {
@@ -61,6 +63,7 @@
       opacity: 0.9;
       position: relative;
       z-index: 1;
+      color: #cbd5e1;
     }
     
     header nav {
@@ -75,20 +78,21 @@
       padding: 10px 20px;
       border-radius: 25px;
       transition: all 0.3s ease;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.08);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.15);
       display: inline-block;
     }
     
     header nav a:hover {
-      background: rgba(255,255,255,0.2);
+      background: rgba(247, 147, 26, 0.2);
+      border-color: #f7931a;
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
     
     main {
-      max-width: 800px;
+      max-width: 850px;
       margin: 3rem auto;
       padding: 0 2rem;
     }
@@ -96,10 +100,10 @@
     .intro,
     .features,
     .screenshots {
-      background: rgba(255,255,255,0.95);
+      background: rgba(255,255,255,0.97);
       border-radius: 20px;
       padding: 3rem 2rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255,255,255,0.2);
       margin-bottom: 3rem;
@@ -114,20 +118,22 @@
       width: 120px;
       height: 120px;
       margin-bottom: 1.5rem;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      border-radius: 24px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       transition: transform 0.3s ease;
+      border: 2px solid #f7931a;
     }
 
     .app-card:hover img {
-      transform: scale(1.1) rotate(5deg);
+      transform: scale(1.08) rotate(3deg);
     }
     
     .app-card h2 {
-      font-size: 2.5rem;
-      color: #1e3c72;
+      font-size: 2.3rem;
+      color: #0f172a;
       margin-bottom: 1.5rem;
       position: relative;
+      font-weight: 700;
     }
     
     .app-card h2::after {
@@ -138,30 +144,30 @@
       transform: translateX(-50%);
       width: 60px;
       height: 4px;
-      background: linear-gradient(90deg, #667eea, #764ba2);
+      background: linear-gradient(90deg, #f7931a, #d67709);
       border-radius: 2px;
     }
     
     .app-card p {
-      font-size: 1.2rem;
-      color: #666;
+      font-size: 1.15rem;
+      color: #475569;
       margin-bottom: 2rem;
-      line-height: 1.6;
-      max-width: 600px;
+      line-height: 1.7;
+      max-width: 680px;
       margin-left: auto;
       margin-right: auto;
     }
     
     .download-btn {
       display: inline-block;
-      background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+      background: linear-gradient(135deg, #16a34a 0%, #059669 100%);
       color: #fff;
-      padding: 15px 35px;
+      padding: 16px 38px;
       border-radius: 25px;
       font-size: 1.2em;
       font-weight: 600;
       text-decoration: none;
-      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+      box-shadow: 0 5px 15px rgba(22, 163, 74, 0.35);
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
@@ -174,7 +180,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
       transition: left 0.5s ease;
     }
     
@@ -183,24 +189,25 @@
     }
     
     .download-btn:hover {
-      background: linear-gradient(135deg, #218838 0%, #1ea085 100%);
+      background: linear-gradient(135deg, #15803d 0%, #047857 100%);
       transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(40, 167, 69, 0.6);
+      box-shadow: 0 10px 25px rgba(22, 163, 74, 0.5);
       color: white;
     }
     
     .features h2,
     .screenshots h2 {
-      font-size: 2.5rem;
-      color: #1e3c72;
+      font-size: 2.3rem;
+      color: #0f172a;
       margin-bottom: 1.5rem;
       position: relative;
+      font-weight: 700;
     }
     
     .features h2 i,
     .screenshots h2 i {
       margin-right: 15px;
-      color: #667eea;
+      color: #f7931a;
     }
     
     .features h2::after,
@@ -212,72 +219,68 @@
       transform: translateX(-50%);
       width: 60px;
       height: 4px;
-      background: linear-gradient(90deg, #667eea, #764ba2);
+      background: linear-gradient(90deg, #f7931a, #d67709);
       border-radius: 2px;
     }
     
     .features ul {
       list-style: none;
       padding: 0;
-      max-width: 600px;
+      max-width: 680px;
       margin: 0 auto;
     }
     
     .features li {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
       margin: 1rem 0;
-      padding: 1.5rem;
+      padding: 1.25rem 1.5rem 1.25rem 3.5rem;
       border-radius: 15px;
-      border: 1px solid rgba(102, 126, 234, 0.1);
-      font-size: 1.1rem;
-      color: #555;
+      border: 1px solid #e2e8f0;
+      font-size: 1.05rem;
+      color: #334155;
       position: relative;
-      transition: transform 0.3s ease;
-      padding-left: 3rem;
+      transition: transform 0.3s ease, border-color 0.3s ease;
       text-align: left;
     }
     
+    .features li strong {
+      color: #0f172a;
+    }
+
     .features li:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      border-color: #f7931a;
     }
     
     .features li::before {
-      content: '✓';
+      content: '🛡️';
       position: absolute;
-      left: 1rem;
+      left: 1.2rem;
       top: 50%;
       transform: translateY(-50%);
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: white;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      font-weight: bold;
+      font-size: 1.1rem;
     }
     
     .carousel-container {
-      max-width: 400px;
+      max-width: 380px;
       margin: 2rem auto;
-      border-radius: 15px;
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+      border: 4px solid #0f172a;
     }
     
     .carousel-item img {
-      border-radius: 15px;
+      border-radius: 16px;
     }
     
     .carousel-control-prev,
     .carousel-control-next {
-      background: rgba(102, 126, 234, 0.8);
+      background: rgba(15, 23, 42, 0.8);
       border-radius: 50%;
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       margin: auto 10px;
     }
     
@@ -288,17 +291,21 @@
     }
     
     footer {
-      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-      color: white;
+      background: #0f172a;
+      color: #94a3b8;
       text-align: center;
-      padding: 2rem;
+      padding: 2.5rem;
       margin-top: 3rem;
-      box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+      border-top: 1px solid #334155;
     }
     
     footer p {
-      font-size: 1rem;
-      opacity: 0.9;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    footer strong {
+      color: #f7931a;
     }
     
     @media (max-width: 700px) {
@@ -320,7 +327,7 @@
       .app-card h2,
       .features h2,
       .screenshots h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
       
       .carousel-container {
@@ -336,7 +343,7 @@
       .app-card h2,
       .features h2,
       .screenshots h2 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
       }
       
       .intro,
@@ -349,8 +356,8 @@
 </head>
 <body>
   <header>
-    <h1><i class="fas fa-wallet"></i> SafeWallet</h1>
-    <p>O seu novo gerenciador financeiro seguro e prático!</p>
+    <h1><i class="fas fa-shield-alt"></i> SafeWallet</h1>
+    <p>Soberania financeira, segurança militar e privacidade para o seu Bitcoin.</p>
     <nav>
       <a href="../index.html"><i class="fas fa-home"></i> Voltar ao Início</a>
     </nav>
@@ -359,9 +366,9 @@
   <main>
     <section class="intro">
       <div class="app-card">
-        <img src="SafeWallet/icone.png" alt="Ícone SafeWallet">
-        <h2>Controle suas finanças de forma simples e segura!</h2>
-        <p>O SafeWallet é a ferramenta ideal para você gerenciar seus ganhos e gastos de maneira inteligente. Tenha um panorama completo da sua saúde financeira através de gráficos intuitivos, estabeleça metas e saiba exatamente para onde vai o seu dinheiro. Tudo isso com foco total na privacidade e segurança dos seus dados.</p>
+        <img src="SafeWallet/icone.png" alt="Ícone SafeWallet Bitcoin">
+        <h2>Assuma o controle total do seu patrimônio digital!</h2>
+        <p>O <strong>SafeWallet</strong> é uma carteira Bitcoin de auto-custódia (não-custodial) desenvolvida para quem não abre mão da segurança, privacidade e soberania. Esqueça a dependência de corretoras centralizadas: aqui, suas chaves privadas e frase semente (BIP-39) são geradas e protegidas localmente no hardware do seu dispositivo com criptografia AES-256 GCM. Com uma arquitetura 100% offline-first e zero telemetria, o seu Bitcoin permanece verdadeiramente sob o seu comando.</p>
         <a class="download-btn" href="https://play.google.com/store/apps/details?id=com.danielsantos.safewallet" target="_blank" rel="noopener">
           <i class="fab fa-google-play"></i> Baixar na Play Store
         </a>
@@ -369,15 +376,16 @@
     </section>
 
     <section class="features">
-      <h2><i class="fas fa-star"></i> Funcionalidades Principais</h2>
+      <h2><i class="fas fa-key"></i> Funcionalidades Principais</h2>
       <ul>
-        <li>Controle detalhado de despesas e receitas</li>
-        <li>Gráficos interativos para análise rápida dos seus gastos</li>
-        <li>Interface limpa, moderna e focada na usabilidade</li>
-        <li>Definição de metas de economia</li>
-        <li>Separação de transações por categorias personalizadas</li>
-        <li>Máxima segurança e privacidade para seus dados</li>
-        <li>Acompanhamento de histórico e saldos</li>
+        <li><strong>Auto-Custódia Real:</strong> Você é o único detentor das suas chaves privadas. Suas 12 ou 24 palavras (BIP-39) nunca saem do seu celular.</li>
+        <li><strong>Segurança de Nível Militar:</strong> Criptografia forte AES-256 GCM ancorada no hardware (Android KeyStore) e banco de dados protegido via SQLCipher.</li>
+        <li><strong>Zero Telemetria:</strong> Privacidade por design. O aplicativo não coleta dados pessoais, e-mails, telefone ou rastreia seu endereço IP.</li>
+        <li><strong>Suporte Multi-Endereço:</strong> Compatibilidade total com os padrões mais modernos da rede: Taproot, Native SegWit, SegWit e Legacy.</li>
+        <li><strong>Modo Blindagem (Ofuscado):</strong> Oculte seus saldos instantaneamente contra olhares curiosos e bloqueie capturas de tela (FLAG_SECURE).</li>
+        <li><strong>Gestão de Taxas (RBF):</strong> Acelere transações pendentes na blockchain utilizando o recurso Replace-by-Fee quando a rede estiver congestionada.</li>
+        <li><strong>Conexão Descentralizada:</strong> Sincronização direta e transparente através de nós Electrum públicos e confiáveis da rede principal (Mainnet).</li>
+        <li><strong>Acesso Biométrico e PIN:</strong> Proteção de entrada reforçada com bloqueio automático temporário contra tentativas de adivinhação de senha.</li>
       </ul>
     </section>
 
@@ -387,10 +395,10 @@
         <div id="carouselSafeWallet" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="SafeWallet/tela1.jpg" class="d-block w-100" alt="Tela principal do SafeWallet">
+              <img src="SafeWallet/tela1.jpg" class="d-block w-100" alt="Painel principal e saldo de Bitcoin no SafeWallet">
             </div>
             <div class="carousel-item">
-              <img src="SafeWallet/tela2.jpg" class="d-block w-100" alt="Gestão de finanças do SafeWallet">
+              <img src="SafeWallet/tela2.jpg" class="d-block w-100" alt="Central de Segurança e envio de transações no SafeWallet">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselSafeWallet" data-bs-slide="prev">
@@ -407,7 +415,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Daniel Santos. Todos os direitos reservados.</p>
+    <p>&copy; 2026 <strong>Daniel Santos</strong>. Todos os direitos reservados. · Soberania Financeira & Auto-Custódia.</p>
   </footer>
   
   <!-- JS do Bootstrap para o carrossel -->
